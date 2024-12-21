@@ -63,6 +63,15 @@ export default function Quiz() {
   return (
     <main className="min-h-screen p-8 bg-gray-950">
       <div className="max-w-2xl mx-auto">
+        <div className="mb-8">
+          <Link 
+            href="/"
+            className="text-gray-400 hover:text-white transition-colors inline-flex items-center gap-2"
+          >
+            <span>←</span> Back to main menu
+          </Link>
+        </div>
+
         <header className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-2">
             Practice Quiz
@@ -93,15 +102,6 @@ export default function Quiz() {
               </div>
             </Link>
           ))}
-        </div>
-
-        <div className="mt-8 text-center">
-          <Link 
-            href="/"
-            className="text-gray-400 hover:text-white transition-colors inline-flex items-center gap-2"
-          >
-            <span>←</span> Back to main menu
-          </Link>
         </div>
       </div>
     </main>
