@@ -1,0 +1,385 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  :root {
+    --background: 193 100% 12%;
+    --foreground: 210 40% 98%;
+    --card: 193 100% 12%;
+    --card-foreground: 210 40% 98%;
+    --popover: 193 100% 12%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 43 74% 66%;
+    --primary-foreground: 193 100% 8%;
+    --secondary: 193 100% 16%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 193 100% 16%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 193 100% 16%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 193 100% 16%;
+    --input: 193 100% 16%;
+    --ring: 12 76% 61%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 193 100% 12%;
+    --foreground: 210 40% 98%;
+    --card: 193 100% 12%;
+    --card-foreground: 210 40% 98%;
+    --popover: 193 100% 12%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 43 74% 66%;
+    --primary-foreground: 193 100% 8%;
+    --secondary: 193 100% 16%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 193 100% 16%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 193 100% 16%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 193 100% 16%;
+    --input: 193 100% 16%;
+    --ring: 12 76% 61%;
+  }
+}
+
+.bg-midnight {
+  background: linear-gradient(45deg, hsl(193, 100%, 4%) 0%, hsl(193, 100%, 2%) 100%);
+}
+
+/* Stars */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: transparent url('/stars.png') repeat;
+  animation: twinkle 100s linear infinite;
+}
+
+.twinkling {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: transparent url('/twinkling.png') repeat;
+  animation: twinkle 50s linear infinite;
+}
+
+/* Enhanced shooting stars with random positions */
+.shooting-stars::before, .shooting-stars::after,
+.shooting-stars-2::before, .shooting-stars-2::after,
+.shooting-stars-3::before, .shooting-stars-3::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8));
+  border-radius: 999px;
+}
+
+.shooting-stars::before {
+  animation: shootingStar1 4s infinite;
+  top: 20%;
+  left: 80%;
+}
+
+.shooting-stars::after {
+  animation: shootingStar2 3.5s infinite;
+  top: 35%;
+  left: 65%;
+}
+
+.shooting-stars-2::before {
+  animation: shootingStar3 5s infinite;
+  top: 15%;
+  left: 40%;
+}
+
+.shooting-stars-2::after {
+  animation: shootingStar4 4.2s infinite;
+  top: 60%;
+  left: 75%;
+}
+
+.shooting-stars-3::before {
+  animation: shootingStar5 3.8s infinite;
+  top: 45%;
+  left: 90%;
+}
+
+.shooting-stars-3::after {
+  animation: shootingStar6 4.7s infinite;
+  top: 10%;
+  left: 55%;
+}
+
+/* Adding more shooting star layers */
+.shooting-stars-4::before, .shooting-stars-4::after,
+.shooting-stars-5::before, .shooting-stars-5::after,
+.shooting-stars-6::before {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8));
+  border-radius: 999px;
+}
+
+.shooting-stars-4::before {
+  animation: shootingStar7 4.3s infinite;
+  top: 5%;
+  left: 70%;
+}
+
+.shooting-stars-4::after {
+  animation: shootingStar8 3.7s infinite;
+  top: 30%;
+  left: 85%;
+}
+
+.shooting-stars-5::before {
+  animation: shootingStar9 5.2s infinite;
+  top: 25%;
+  left: 95%;
+}
+
+.shooting-stars-5::after {
+  animation: shootingStar10 4.8s infinite;
+  top: 50%;
+  left: 60%;
+}
+
+.shooting-stars-6::before {
+  animation: shootingStar11 3.9s infinite;
+  top: 15%;
+  left: 45%;
+}
+
+@keyframes twinkle {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-1800px);
+  }
+}
+
+@keyframes shootingStar1 {
+  0% {
+    transform: translate(0, 0) rotate(45deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-400px, 400px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shootingStar2 {
+  0% {
+    transform: translate(0, 0) rotate(35deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-300px, 500px) rotate(35deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shootingStar3 {
+  0% {
+    transform: translate(0, 0) rotate(55deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-500px, 300px) rotate(55deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shootingStar4 {
+  0% {
+    transform: translate(0, 0) rotate(40deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-350px, 450px) rotate(40deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shootingStar5 {
+  0% {
+    transform: translate(0, 0) rotate(50deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-450px, 350px) rotate(50deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shootingStar6 {
+  0% {
+    transform: translate(0, 0) rotate(30deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-250px, 550px) rotate(30deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shootingStar7 {
+  0% {
+    transform: translate(0, 0) rotate(42deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-380px, 420px) rotate(42deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shootingStar8 {
+  0% {
+    transform: translate(0, 0) rotate(38deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-420px, 380px) rotate(38deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shootingStar9 {
+  0% {
+    transform: translate(0, 0) rotate(48deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-350px, 480px) rotate(48deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shootingStar10 {
+  0% {
+    transform: translate(0, 0) rotate(52deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-480px, 350px) rotate(52deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shootingStar11 {
+  0% {
+    transform: translate(0, 0) rotate(32deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-320px, 520px) rotate(32deg);
+    opacity: 0;
+  }
+}
+
+.silhouette {
+  position: absolute;
+  inset: 0;
+  background: url('/silhouette.png') center center no-repeat;
+  background-size: contain;
+  mix-blend-mode: screen;
+  filter: contrast(1.2) brightness(0.8);
+}
+
+.particles {
+  position: absolute;
+  inset: 0;
+  background: url('/particles.png') center center no-repeat;
+  background-size: cover;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  filter: brightness(1.2);
+}
+
+/* Add particle animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Enhance the background gradient */
+.bg-midnight {
+  background: linear-gradient(45deg, 
+    hsl(193, 100%, 4%) 0%, 
+    hsl(193, 100%, 2%) 100%
+  );
+}
+
+/* Add a subtle glow effect */
+@keyframes glow {
+  0% {
+    filter: brightness(1) blur(0px);
+  }
+  50% {
+    filter: brightness(1.2) blur(2px);
+  }
+  100% {
+    filter: brightness(1) blur(0px);
+  }
+}
